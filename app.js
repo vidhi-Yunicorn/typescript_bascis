@@ -1,33 +1,82 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
+// let arr:[string , number] =["vidhi",22];
+// enum UserRoles{
+//     Admin="vidhi",
+//     Guest="guest",
+//     Super_Admin="super_admin"
+// }
+// enum StatusCodes{
+//     Abandoned ="Abondend status code 500",
+//     NotFound="not found at code 404"
+// }
+// StatusCodes.NotFound           
+// class HumanMaker{
+//     age=0;
+//     constructor(public name : string, public isHandsome: boolean){
+//     }
+// }
+// new HumanMaker("vishi",true)
+// class BottleMaker{
+//     constructor(public brand:string , public price:number, public color: string)
+//    {
+//    }
+// }
+//  let b1 = new BottleMaker("Milton",2333,"black")
+//    let b2 = new BottleMaker("milton" ,787,"blue")
+// class BottleMaker{
+//     constructor(public name: string){
+//     }
+// }
+// class MetalBottleMaker extends BottleMaker{
+//     constructor(name:string){
+//     super(name);
+//     }
+//     getValue(){
+//         console.log(this.name);
+//     }
+// }
+// let b1 = new BottleMaker("Milton");
+// function abcdef(name:string,age:number,cb:(arg:string)=>void){
+//     cb("hey");
+// }
+// abcdef("vidhi",20,(arg: string)=>{
+//     console.log("abcshjb");
+// })
+// function Overloading
+// function abcd(a:string):void;
+// function abcd(a:string,b:number):number;
+// function abcd(a:any , b?: any){
+//     if(typeof a==="string" &&  b=== undefined){
+//            console.log("hey");
+//     }
+//      if(typeof a==="string" &&  b=== "number"){
+//         return 123;
+//     }
+//     else throw new Error("Something is wrong");
+// }
+//generics
+// function abcd<T>(a:T){}
+// abcd<string>("vidhi")
+// abcd<number>(12);
+// function log<T>(value:T){
+// console.log(value);
+// }
+// log<string>("vidhi")
+// interface Generics
+// interface Halua<T>{
+//     name:string;
+//     age:number;
+//     key :T;
+// }
+// function abcd(obj: Halua<string>){
+// }
+// abcd({name:"foo",age:24,key:"hhdhdhwg"})
+//classes Generics
 var BottleMaker = /** @class */ (function () {
-    function BottleMaker(name) {
-        this.name = name;
+    function BottleMaker(key) {
+        this.key = key;
     }
     return BottleMaker;
 }());
-var MetalBottleMaker = /** @class */ (function (_super) {
-    __extends(MetalBottleMaker, _super);
-    function MetalBottleMaker(name) {
-        return _super.call(this, name) || this;
-    }
-    MetalBottleMaker.prototype.getValue = function () {
-        console.log(this.name);
-    };
-    return MetalBottleMaker;
-}(BottleMaker));
-var b1 = new BottleMaker("Milton");
-console.log(b1);
+var b1 = new BottleMaker("hey");
+var b2 = new BottleMaker(12);
+console.log(b1, b2);
